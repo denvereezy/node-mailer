@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+var uuid = require('node-uuid');
 
 exports.sendEmail = function(req, res) {
 
@@ -15,7 +16,7 @@ exports.sendEmail = function(req, res) {
   mailOpts = {
     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
     to: req.body.receiver,
-    subject: req.body.subject,
+    subject: req.body.subject ,
     text: req.body.message
   };
 
